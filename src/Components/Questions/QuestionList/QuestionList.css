@@ -1,0 +1,16 @@
+.QuestionList{
+    box-shadow: 2px 2px 5px 1px gray;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 20px 0;
+    background-color: white;
+}
+
+.QuestionList .Question:last-child{
+    border-bottom: none;
+}
+
+.QuestionList h2{
+    margin-bottom: 20px;
+}

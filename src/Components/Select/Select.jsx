@@ -2,7 +2,7 @@ import React from 'react'
 import "./Select.css";
 import categories from './Categories';
 
-import { FormControl, InputLabel, MenuItem, Select, TextField } from '@material-ui/core';
+import { FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
 
 
 export default function SelectParams(props) {

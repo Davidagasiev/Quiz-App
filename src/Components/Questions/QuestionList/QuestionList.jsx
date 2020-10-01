@@ -6,8 +6,9 @@ import Question from "../Question/Question.jsx";
 export default function QuestionList(props) {
     return (
         <div className="QuestionList">
-            {props.questions.map(question => 
-                <Question question={question}/>
+            <h2>Quiz</h2>
+            {props.questions.map((question, index) => 
+                <Question key={index}  {...question}/>
                 )    
             }
         </div>

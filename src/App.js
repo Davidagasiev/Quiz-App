@@ -4,16 +4,17 @@ import './App.css';
 import axios from "axios";
 import Select from './Components/Select/Select.jsx';
 import QuestionList from "./Components/Questions/QuestionList/QuestionList.jsx";
-import { Divider } from '@material-ui/core';
+import { CircularProgress, Divider } from '@material-ui/core';
 
 function App() {
 
   const [questions, setQuestions] = useState([]);
-
+  const [ loading, setLoading ] = useState(true);
   const [category, setCategory] = useState(9);
   const [difficulty, setDifficulty] = useState("easy");
 
   useEffect(() => {
+    setLoading(true);
     axios.get(`https://opentdb.com/api.php?amount=10&category=${category}&difficulty=${difficulty}&type=multiple`)
     .then(function (response) {
       // handle success
@@ -23,7 +24,12 @@ function App() {
       // handle error
       alert(error.message);
     })
+    .then(() => {
+      setLoading(false);
+    })
   }, [category, difficulty])
+
+
 
   return (
     <div className="App">
@@ -36,7 +42,11 @@ function App() {
           difficulty={difficulty}
           setDifficulty={setDifficulty}
         />
-        <QuestionList questions={questions}/>
+        { loading ?
+          <CircularProgress />
+            :
+          <QuestionList questions={questions}/>
+        }
       </div>
     </div>
   );
