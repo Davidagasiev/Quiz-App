@@ -4,7 +4,7 @@ import './App.css';
 import axios from "axios";
 import Select from './Components/Select/Select.jsx';
 import QuestionList from "./Components/Questions/QuestionList/QuestionList.jsx";
-import { CircularProgress, Divider } from '@material-ui/core';
+import { Button, Divider } from '@material-ui/core';
 
 function App() {
 
@@ -29,7 +29,10 @@ function App() {
     })
   }, [category, difficulty])
 
+// For Controlling Question Answers
 
+const [answers, setAnswers] = useState(new Array(10));
+const [showResult, setShowResult] = useState(false);
 
   return (
     <div className="App">
@@ -42,11 +45,13 @@ function App() {
           difficulty={difficulty}
           setDifficulty={setDifficulty}
         />
-        { loading ?
-          <CircularProgress />
-            :
-          <QuestionList questions={questions}/>
-        }
+
+        <QuestionList answers={answers} setAnswers={setAnswers} loading={loading} questions={questions}/>
+
+        <Button style={{marginTop: "30px"}} variant="contained" color="primary">
+          Show Results
+        </Button>
+
       </div>
     </div>
   );
