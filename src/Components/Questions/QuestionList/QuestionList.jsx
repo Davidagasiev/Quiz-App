@@ -13,7 +13,13 @@ export default function QuestionList(props) {
                 <CircularProgress />
                 :
                 props.questions.map((question, index) => 
-                    <Question key={index} index={index} answers={props.answers} setAnswers={props.setAnswers} {...question}/>
+                    <Question 
+                        key={index} 
+                        index={index} 
+                        answers={props.answers} 
+                        showResult={props.showResult}
+                        setAnswers={props.setAnswers} 
+                        {...question}/>
                     )    
             }
         </div>

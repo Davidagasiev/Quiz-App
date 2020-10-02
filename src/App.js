@@ -57,7 +57,13 @@ useEffect(() => {
           setNumberOfQuestions={setNumberOfQuestions}
         />
 
-        <QuestionList answers={answers} setAnswers={setAnswers} loading={loading} questions={questions}/>
+        <QuestionList 
+          answers={answers} 
+          setAnswers={setAnswers} 
+          loading={loading} 
+          questions={questions}
+          showResult={showResult}
+        />
 
         <Button onClick={() => setShowResult(true)} style={{marginTop: "30px"}} variant="contained" color="primary">
           Show Results

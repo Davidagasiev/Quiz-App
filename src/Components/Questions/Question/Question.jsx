@@ -24,7 +24,17 @@ export default function Question(props) {
             <h3>{props.question}</h3>
             <RadioGroup aria-label="gender" name="gender1" onChange={answerChanged}>
                 {answers.map(answer =>
-                    <FormControlLabel value={answer} control={<Radio />} label={answer} />
+                    props.showResult ?
+                    <FormControlLabel
+                        disabled
+                        value={answer} 
+                        control={<Radio />} 
+                        label={answer} />
+                        :
+                    <FormControlLabel
+                        value={answer} 
+                        control={<Radio />} 
+                        label={answer} />
                 )
                 }
             </RadioGroup>
