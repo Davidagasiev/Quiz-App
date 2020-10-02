@@ -1,7 +1,10 @@
-.Results{
-    margin-top: 30px;
-}
 
 .Results button{
     margin-top: 20px;
+}
+
+@media screen and (max-width: 850px) {
+    .Results button{
+        margin-bottom: 50px;
+    }
 }

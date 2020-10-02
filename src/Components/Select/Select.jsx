@@ -24,10 +24,10 @@ export default function SelectParams(props) {
 
 {/* Number of Questions */}
             <FormControl>
-                <InputLabel id="demo-mutiple-name-label">Questions</InputLabel>
+                <InputLabel id="Questions">Questions</InputLabel>
                 <Select
-                labelId="demo-mutiple-name-label"
-                id="demo-mutiple-name"
+                labelId="Questions"
+                id="Questions"
                 value={props.numberOfQuestions}
                 onChange={(e) => props.setNumberOfQuestions(e.target.value)}
                 >
@@ -38,10 +38,10 @@ export default function SelectParams(props) {
 
 {/* Select Category */}
             <FormControl>
-                <InputLabel id="demo-mutiple-name-label">Category</InputLabel>
+                <InputLabel id="Category">Category</InputLabel>
                 <Select
-                labelId="demo-mutiple-name-label"
-                id="demo-mutiple-name"
+                labelId="Category"
+                id="Category"
                 value={props.category}
                 onChange={(e) => props.setCategory(e.target.value)}
                 >
@@ -56,10 +56,10 @@ export default function SelectParams(props) {
 
 {/* Select Type */}
             <FormControl>
-                <InputLabel id="demo-mutiple-name-label">Type</InputLabel>
+                <InputLabel id="Type">Type</InputLabel>
                 <Select
-                    labelId="demo-mutiple-name-label"
-                    id="demo-mutiple-name"
+                    labelId="Type"
+                    id="Type"
                     value={props.type}
                     onChange={(e) => props.setType(e.target.value)}
                 >
@@ -71,10 +71,10 @@ export default function SelectParams(props) {
 
 {/* Select Difficulty */}
             <FormControl>
-                <InputLabel id="demo-mutiple-name-label">Difficulty</InputLabel>
+                <InputLabel id="Difficulty">Difficulty</InputLabel>
                 <Select
-                labelId="demo-mutiple-name-label"
-                id="demo-mutiple-name"
+                labelId="Difficulty"
+                id="Difficulty"
                 value={props.difficulty}
                 onChange={(e) => props.setDifficulty(e.target.value)}
                 >

@@ -5,3 +5,16 @@
 .Select .MuiFormControl-root{
     margin: 20px;
 }
+
+
+@media screen and (max-width: 580px) {
+	.Select{
+        padding: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .Select .MuiFormControl-root{
+        margin: 15px 0;
+        width: 100%;
+    }  
+}

@@ -68,7 +68,7 @@ useEffect(() => {
           showResult={showResult}
         />
 
-        <Button onClick={() => setShowResult(true)} style={{marginTop: "30px"}} variant="contained" color="primary">
+        <Button onClick={() => setShowResult(true)} style={{marginTop: "30px", marginBottom: "30px"}} variant="contained" color="primary">
           Show Results
         </Button>
 
