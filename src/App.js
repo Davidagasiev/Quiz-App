@@ -20,10 +20,11 @@ const [loading, setLoading] = useState(true);
 const [numberOfQuestions, setNumberOfQuestions] = useState(10);
 const [category, setCategory] = useState(9);
 const [difficulty, setDifficulty] = useState("easy");
+const [type, setType] = useState("multiple");
 
 function loadingNewQuestions(){
   setLoading(true);
-  axios.get(`https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${category}&difficulty=${difficulty}&type=multiple`)
+  axios.get(`https://opentdb.com/api.php?amount=${numberOfQuestions}&category=${category}&difficulty=${difficulty}&type=${type}`)
   .then(function (response) {
     // handle success
     setQuestions(response.data.results);
@@ -41,7 +42,7 @@ function loadingNewQuestions(){
 
 useEffect(() => {
   loadingNewQuestions();
-}, [category, difficulty, numberOfQuestions])
+}, [category, difficulty, numberOfQuestions, type])
 
   return (
     <div className="App">
@@ -55,6 +56,8 @@ useEffect(() => {
           setDifficulty={setDifficulty}
           numberOfQuestions={numberOfQuestions}
           setNumberOfQuestions={setNumberOfQuestions}
+          type={type}
+          setType={setType}
         />
 
         <QuestionList 

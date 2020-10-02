@@ -54,6 +54,21 @@ export default function SelectParams(props) {
             </FormControl>
 {/* Select Category */}
 
+{/* Select Type */}
+            <FormControl>
+                <InputLabel id="demo-mutiple-name-label">Type</InputLabel>
+                <Select
+                    labelId="demo-mutiple-name-label"
+                    id="demo-mutiple-name"
+                    value={props.type}
+                    onChange={(e) => props.setType(e.target.value)}
+                >
+                    <MenuItem value={"multiple"}>Multiple Choice</MenuItem>
+                    <MenuItem value={"boolean"}>True / False</MenuItem>
+                </Select>
+            </FormControl>
+{/* Select Type */}
+
 {/* Select Difficulty */}
             <FormControl>
                 <InputLabel id="demo-mutiple-name-label">Difficulty</InputLabel>
