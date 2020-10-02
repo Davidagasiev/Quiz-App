@@ -7,11 +7,38 @@ import { FormControl, InputLabel, MenuItem, Select } from '@material-ui/core';
 
 export default function SelectParams(props) {
 
+    function returnMenuItems() {
+        let menuItems = [];
+        for(let i = 1; i <= 50; i++){
+            menuItems.push(
+                <MenuItem key={i} value={i}>
+                    { i }
+                </MenuItem>
+                )
+        }
+        return menuItems;
+    }
+
     return (
         <div className="Select">
+
+{/* Number of Questions */}
+            <FormControl>
+                <InputLabel id="demo-mutiple-name-label">Questions</InputLabel>
+                <Select
+                labelId="demo-mutiple-name-label"
+                id="demo-mutiple-name"
+                value={props.numberOfQuestions}
+                onChange={(e) => props.setNumberOfQuestions(e.target.value)}
+                >
+                    {returnMenuItems().map(number => number)}
+                </Select>
+            </FormControl>
+{/* Number of Questions */}
+
 {/* Select Category */}
             <FormControl>
-                <InputLabel id="demo-mutiple-name-label">Name</InputLabel>
+                <InputLabel id="demo-mutiple-name-label">Category</InputLabel>
                 <Select
                 labelId="demo-mutiple-name-label"
                 id="demo-mutiple-name"
@@ -29,7 +56,7 @@ export default function SelectParams(props) {
 
 {/* Select Difficulty */}
             <FormControl>
-                <InputLabel id="demo-mutiple-name-label">Name</InputLabel>
+                <InputLabel id="demo-mutiple-name-label">Difficulty</InputLabel>
                 <Select
                 labelId="demo-mutiple-name-label"
                 id="demo-mutiple-name"

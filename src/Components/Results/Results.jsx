@@ -12,7 +12,7 @@ export default function Results(props) {
     return (
         <div className="Results">
             <h2>Your Result is:</h2>
-            <h2>{props.answers.filter(answer => answer === true).length} of 20</h2>
+            <h2>{props.answers.filter(answer => answer === true).length} of {props.answers.length}</h2>
 
             <Button onClick={reset} variant="contained" color="secondary">
                 Try Again
