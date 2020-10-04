@@ -60,6 +60,8 @@ useEffect(() => {
           setType={setType}
         />
 
+        <Button style={{marginBottom: "20px"}} onClick={loadingNewQuestions}>New Questions</Button>
+
         <QuestionList 
           answers={answers} 
           setAnswers={setAnswers} 

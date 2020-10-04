@@ -8,3 +8,12 @@
     margin-bottom: 20px;
     word-break: break-all;
 }
+
+.answer{
+    display: flex;
+    align-items: center;
+}
+
+.right{
+    background-color: rgb(193, 253, 193);
+}

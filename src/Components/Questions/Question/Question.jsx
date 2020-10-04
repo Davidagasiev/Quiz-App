@@ -2,6 +2,8 @@ import React from 'react'
 import "./Question.css";
 
 import { FormControlLabel, Radio, RadioGroup } from '@material-ui/core';
+import CheckCircleSharpIcon from '@material-ui/icons/CheckCircleSharp';
+import CancelSharpIcon from '@material-ui/icons/CancelSharp';
 
 
 export default function Question(props) {
@@ -20,17 +22,27 @@ export default function Question(props) {
     }
 
     return (
-        <div className="Question">
+        <div className={`Question ${props.showResult && props.answers[props.index] ? 
+                                        "right"
+                                    : 
+                                        ""}`
+                                    }>
             <h3>{props.question}</h3>
             <RadioGroup aria-label="gender" name="gender1" onChange={answerChanged}>
                 {answers.map((answer, index) =>
                     props.showResult ?
-                    <FormControlLabel
-                        key={index}
-                        disabled
-                        value={answer} 
-                        control={<Radio />} 
-                        label={answer} />
+                    <div key={index} className="answer">
+                        <FormControlLabel
+                            disabled
+                            value={answer} 
+                            control={<Radio />} 
+                            label={answer} />
+                        { answer === props.correct_answer ?
+                                <CheckCircleSharpIcon style={{color: "green"}} />
+                            :
+                                <CancelSharpIcon style={{color: "red"}} />
+                        }
+                    </div>
                         :
                     <FormControlLabel
                         key={index}
